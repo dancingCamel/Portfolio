@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc 
+config.py
+notes.py
+*.db
+test.py
+*.xml
+.vscode/
+*.exe
+Procfile

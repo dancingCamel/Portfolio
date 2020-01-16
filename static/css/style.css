@@ -1,0 +1,24 @@
+.vertical-center {
+	min-height: 90%;
+	min-height: 90vh;
+
+	display: flex;
+	align-items: center;
+}
+
+.active {
+	text-decoration: underline;
+}
+
+.container {
+	min-height: 87%;
+	min-height: 87vh;
+}
+
+.modal-body p {
+	word-wrap: break-word;
+}
+
+/* text #616161, font Roboto (google font) */
+/* blue text #4889fa */
+/* side block  #cbcbcb #f3f3f3 */
