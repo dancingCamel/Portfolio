@@ -6,19 +6,32 @@
 	align-items: center;
 }
 
-.active {
-	text-decoration: underline;
+.container {
+	min-height: 90%;
+	min-height: 90vh;
 }
 
-.container {
-	min-height: 87%;
-	min-height: 87vh;
+.uppercase {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.blue {
+	background-color: #4889fa;
+}
+
+.light-gray {
+	background-color: #cbcbcb;
+}
+
+.lighter-gray {
+	background-color: #f3f3f3;
+}
+
+.dark-gray {
+	background-color: #616161;
 }
 
 .modal-body p {
 	word-wrap: break-word;
 }
-
-/* text #616161, font Roboto (google font) */
-/* blue text #4889fa */
-/* side block  #cbcbcb #f3f3f3 */

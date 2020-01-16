@@ -10,11 +10,9 @@
     {% block title %}
     {% endblock %}
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
     <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 </head>
@@ -24,27 +22,24 @@
     <!-- NAV -->
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark blue">
             <div class="d-flex flex-grow-1">
-                <span class="w-100 d-lg-none d-block">
-                    <!-- hidden spacer to center brand on mobile --></span>
-
-                <div class="w-100 text-right">
+                <div class="w-100 text-right ">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-links">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
             </div>
-            <div class="collapse navbar-collapse flex-grow-1 text-right" id="nav-links">
-                <ul class="navbar-nav ml-auto flex-nowrap">
+            <div class="collapse navbar-collapse flex-grow-1 mx-auto" id="nav-links">
+                <ul class="navbar-nav mr-auto flex-nowrap">
                     <li class="nav-item m-1">
-                        <a href="/" class="nav-link">Projects</a>
+                        <a href="/" class="nav-link active uppercase">Projects</a>
                     </li>
                     <li class="nav-item m-1">
-                        <a href="../static/pdf/Robert-Morgan-CV.pdf" class="nav-link">CV</a>
+                        <a href="../static/pdf/Robert-Morgan-CV.pdf" class="nav-link uppercase">CV</a>
                     </li>
                     <li class="nav-item m-1">
-                        <a href="mailto:robert.brindley.morgan@gmail.com" class="nav-link">Contact</a>
+                        <a href="mailto:robert.brindley.morgan@gmail.com" class="nav-link uppercase">Contact</a>
                     </li>
 
                 </ul>
@@ -57,29 +52,26 @@
     {% endblock %}
 
     <!-- FOOTER -->
-    <footer class="page-footer font-small bg-primary text-light pt-4">
-        <!-- Copyright -->
-        <div class="footer-copyright bg-secondary text-center py-3">© 2019 Copyright:
-            <a href="/" class="text-light"> robbmdev.com</a>
-        </div>
 
+    <!-- Copyright -->
+    <footer class="footer-copyright dark-gray text-light text-center py-3">© 2019 Copyright:
+        <a href="/" class="text-light"> robbmdev.com</a>
     </footer>
+
 
     <!-- Bootstrap scripts -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
+    <script src="../static/scripts/bootstrap.min.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
         integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 
 
     <!-- app script -->
-    <script src="../static/app.js" type="text/javascript"></script>
+    <script src="../static/scripts/app.js" type="text/javascript"></script>
 
     {% block script %}
     {% endblock %}
