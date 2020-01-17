@@ -1,4 +1,5 @@
 from flask_restful import Resource, reqparse
+from models.projects import ProjectsModel
 from auth import authenticate
 
 _projects_parser = reqparse.RequestParser()

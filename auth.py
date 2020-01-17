@@ -1,4 +1,4 @@
-from flask import request, abort
+from flask import request, abort, current_app
 from functools import wraps
 from werkzeug.security import check_password_hash
 from models.user import UserModel
@@ -10,10 +10,14 @@ def authenticate(view_function):
         username = request.headers.get('username')
         password = request.headers.get('password')
 
-        user = UserModel.find_by_username(username)
-        if user:
-            if check_password_hash(user.password, password):
-                return view_function(*args, **kwargs)
+        admin_user = current_app.config['USERNAME']
+        admin_pass = current_app.config['PASSWORD']
+
+        if username != admin_user:
+            abort(401)
+
+        if check_password_hash(admin_pass, password):
+            return view_function(*args, **kwargs)
 
         abort(401)
 
