@@ -23,21 +23,46 @@
             </div>
         </div>
 
-        <div class="row" id="project-area">
-            <div class="content-wrapper mx-auto mt-3">
-                <!-- Projects title -->
+        <div class="row">
+            <div class="title-wrapper mx-auto mt-3 mb-3">
                 <h1 class="dark-gray-text"><em>Projects</em></h1>
-                <div class="card-container mt-3" id="project-card-container">
+            </div>
+        </div>
 
-                    <!-- Project cards dynamically generated with accosiated modal -->
+        <div class="row row-cols-1 row-cols-md-3" id="project-card-area">
 
+            <!-- Cards added here dynamically -->
+
+        </div>
+
+        <div id="modal-area">
+            <div class="modal fade" id="uniqueID" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="row">
-            <!-- social media icons (github, linkedin) -->
-        </div>
+    </div>
+
+    <div class="row">
+        <!-- social media icons (github, linkedin) -->
+    </div>
 
     </div>
 </main>
@@ -47,21 +72,63 @@
 {% block script %}
 <script>
 
+
+
+
     $(document).ready(function () {
-        getProjectJson();  // saves projects to "projects" variable
+    });
 
-        // make unique ID from title
 
-        // make bootstrap card
+    fetch('/projects').then(function (response) {
+        return response.json();
+    }).then(function (json) {
+        results = json;
 
-        // make modal
+        results['projects'].forEach(project => {
+
+            var tempTags = [];
+            project['tags'] = project['tags'].split(',');
+            project['tags'].forEach(element => {
+                tempTags.push(element.trim());
+            });
+            project['tags'] = tempTags;
+
+            console.log(project)
+
+            var uniqueId = makeId(project['title'])
+
+            var card = document.createElement("div");
+            card.innerHTML = makeCard(uniqueId, project);
+            document.querySelector('#project-card-area').appendChild(card);
+
+
+            var modal = document.createElement("div");
+            modal.innerHTML = makeModal(uniqueId, project);
+            document.querySelector('#modal-area').appendChild(modal);
+
+        });
+
+        // make unique ID from title - no space and camel case - extract to function and save in app.js
+
+        // make bootstrap card - extract to function?
+
+        // make modal - extract to function?
 
         // add all to page
         // create elements? or just add strings?
         // or create one large element and push all to DOM at once
 
 
+
+
+    }).catch(function (err) {
+        console.log('Fetch problem: ' + err.message);
     });
+
+
+
+
+
 
 </script>
 {% endblock %}
