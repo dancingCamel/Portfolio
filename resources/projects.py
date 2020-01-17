@@ -42,8 +42,14 @@ class Projects(Resource):
             project.description = data['description']
             project.challenges = data['challenges']
             project.reflections = data['reflections']
-            project.github = data['github']
-            project.live = data['live']
+            if data['github']:
+                project.github = data['github']
+            else:
+                project.github = ""
+            if data['live']:
+                project.live = data['live']
+            else:
+                project.live = ""
         else:
             project = ProjectsModel(
                 data['title'],
