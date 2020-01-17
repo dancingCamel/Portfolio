@@ -1,7 +1,6 @@
 from flask import request, abort, current_app
 from functools import wraps
 from werkzeug.security import check_password_hash
-from models.user import UserModel
 
 
 def authenticate(view_function):

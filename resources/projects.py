@@ -33,7 +33,7 @@ class Projects(Resource):
     @authenticate
     def put(self):
         data = _projects_parser.parse_args()
-        project = CountryModel.find_by_title(data['title'])
+        project = ProjectsModel.find_by_title(data['title'])
 
         if project:
             project.thumb = data['thumb']
@@ -56,5 +56,18 @@ class Projects(Resource):
                 data['github'],
                 data['live'])
 
-        project.save_to_db()
+        try:
+            project.save_to_db()
+        except:
+            return {'message': "Something went wrong adding the project"}, 501
         return project.json()
+
+    @authenticate
+    def delete(self):
+        data = _projects_parser.parse_args()
+        project = ProjectsModel.find_by_title(data['title'])
+
+        if project:
+            project.delete_from_db()
+
+        return {'message': "Deleted successfully"}, 200
