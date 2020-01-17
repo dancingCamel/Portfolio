@@ -15,21 +15,42 @@
             </div>
         </div>
     </div>
-    <div class="container mt-3">
+    <div class="container mt-2">
         <div class="row">
-            <div class="col-sm">
+            <div class="col-sm-12">
                 <!-- a bit about me -->
+
+            </div>
+        </div>
+
+        <div class="row" id="project-area">
+            <div class="content-wrapper mx-auto mt-3">
+                <!-- Projects title -->
+                <h1 class="dark-gray-text"><em>Projects</em></h1>
+                <div class="card-container mt-3" id="project-card-container">
+
+                    <!-- Project cards dynamically generated with accosiated modal -->
+
+                </div>
             </div>
         </div>
 
         <div class="row">
-            <!-- Projects title -->
-            <div class="col-sm-4" id="">
-                <!-- Project cards dynamically generated -->
-            </div>
+            <!-- social media icons (github, linkedin) -->
         </div>
 
     </div>
 </main>
 
+{% endblock %}
+
+{% block script %}
+<script>
+
+    $(document).ready(function () {
+        var projects = getProjectJson();
+        console.log(projects);
+    });
+
+</script>
 {% endblock %}
