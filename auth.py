@@ -10,11 +10,11 @@ def authenticate(view_function):
         username = request.headers.get('username')
         password = request.headers.get('password')
 
-        admin_user = current_app.config['USERNAME']
-        admin_pass = current_app.config['PASSWORD']
+        # admin_user = current_app.config['USERNAME']
+        # admin_pass = current_app.config['PASSWORD']
 
-        # admin_user = os.getenv('USERNAME')
-        # admin_pass = os.getenv('PASSWORD')
+        admin_user = os.getenv('USERNAME')
+        admin_pass = os.getenv('PASSWORD')
 
         if username != admin_user:
             abort(401)
