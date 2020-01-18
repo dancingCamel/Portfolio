@@ -1,6 +1,7 @@
 from flask import request, abort, current_app
 from functools import wraps
 from werkzeug.security import check_password_hash
+import os
 
 
 def authenticate(view_function):
@@ -11,6 +12,9 @@ def authenticate(view_function):
 
         admin_user = current_app.config['USERNAME']
         admin_pass = current_app.config['PASSWORD']
+
+        # admin_user = os.getenv('USERNAME')
+        # admin_pass = os.getenv('PASSWORD')
 
         if username != admin_user:
             abort(401)
