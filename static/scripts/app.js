@@ -40,55 +40,124 @@ function makeCard(uniqueId, project) {
 }
 
 function makeModal(uniqueId, project) {
+	// disable or enable github and live links
+	var githubLink =
+		'<div class="modal-link-icon inactive"><img src="../static/images/github.svg"></div><span class="link-text inactive">Github repo</span>';
+	var liveLink =
+		'<div class="modal-link-icon inactive"><img src="../static/images/zap.svg"></div><span class="link-text inactive">Live site</span>';
+	if (project['github']) {
+		githubLink =
+			'<a href="' +
+			project['github'] +
+			'" class="modal-link-container" ><div class="modal-link-live modal-link-icon"><img src="../static/images/github.svg"></div><span class="link-text">Github repo</span></a>';
+	}
+	if (project['live']) {
+		liveLink =
+			'<a href="' +
+			project['live'] +
+			'" class="modal-link-container" ><div class="modal-link-live modal-link-icon"><img src="../static/images/zap.svg"></div><span class="link-text">Live site</span></a>';
+	}
+
+	challenges = 'None in particular.';
+	if (project['challenges'] != '') {
+		var challenges = '<ul class="dark-gray-text" style="list-style-type:circle;">';
+		project['challenges'].forEach((row) => {
+			tempString = '<li class="dark-gray-text">';
+			tempString += row;
+			tempString += '</li>';
+
+			challenges += tempString;
+		});
+		challenges += '</ul>';
+	}
+
+	var projectTags = project['tags'].join(', ');
+
 	return (
 		`<div class="modal fade" id="` +
 		uniqueId +
-		`" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		`" tabindex="-1" role="dialog" 
 	            aria-hidden="true">
 		<div class="modal-dialog-centered modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 			
 				<div class="modal-header">
-					<h5 class="modal-title" id="` +
+					<h5 class="modal-title dark-gray-text" id="` +
 		uniqueId +
-		`ModalTitle">` +
+		`ModalTitle"><em>` +
 		project['title'] +
-		`</h5>
+		`</em></h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-				</div><img src="` +
-		project['image'] +
-		`">
-				<div class="modal-body"><h6 class="card-subtitle mb-2 text-muted">` +
-		project['tags'] +
-		`</h6>
-					<div class="container-fluid">
-					<div class="row">
-					<div class="col-md-4">.col-md-4</div>
-					<div class="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
-					</div>
-					<div class="row">
-					<div class="col-md-3 ml-auto">.col-md-3 .ml-auto</div>
-					<div class="col-md-2 ml-auto">.col-md-2 .ml-auto</div>
-					</div>
-					<div class="row">
-					<div class="col-md-6 ml-auto">.col-md-6 .ml-auto</div>
-					</div>
-					<div class="row">
-					<div class="col-sm-9">
-						Level 1: .col-sm-9
-						<div class="row">
-						<div class="col-8 col-sm-6">
-							Level 2: .col-8 .col-sm-6
-						</div>
-						<div class="col-4 col-sm-6">
-							Level 2: .col-4 .col-sm-6
-						</div>
-						</div>
-					</div>
-					</div>
 				</div>
+				<div class="modal-body">
+				
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-6">
+								<!-- left column -->
+								<div class="row">
+									<!-- img -->
+									<img src="` +
+		project['image'] +
+		`" class="mb-2">
+								</div>
+								<div class="row">
+									<!-- tags -->
+									<p class="card-subtitle mb-2 text-muted">` +
+		projectTags +
+		`</p>
+								</div>
+								<div class="row">
+									<!-- links -->
+									<div class="col-md-6 modal-link-container">
+										` +
+		githubLink +
+		`
+									</div>
+									<div class="col-md-6 modal-link-container">
+										` +
+		liveLink +
+		`
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<!-- right column -->
+								<div class="row">
+									<!-- description -->
+									<div class="col-md-12">
+										<h6 class="dark-gray-text"><u>Project Description</u></h6>
+										<p class="dark-gray-text">` +
+		project['description'] +
+		`</p><hr>
+									</div>
+								</div>
+								<div class="row">
+									<!-- challenges -->
+									<div class="col-md-12">
+										<h6 class="dark-gray-text"><u>Challenges</u></h6>
+										<p class="dark-gray-text">` +
+		challenges +
+		`</p><hr>
+									</div>
+								</div>
+								<div class="row">
+									<!-- reflections -->
+									<div class="col-md-12">
+										<h6 class="dark-gray-text"><u>Reflections</u></h6>
+										<p class="dark-gray-text">` +
+		project['reflections'] +
+		`</p>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+						
+					</div>
 		
 				</div>
 				<div class="modal-footer">

@@ -2,11 +2,22 @@
 <html lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101851142-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-101851142-1');
+    </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link rel="icon" type="image/x-icon" />   ico icon-->
+    <link
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABCUlEQVRIib3VMUvDUBTF8Z8g1MnBwRZXd3FyUdBBpOCStZO7i4MInfwSFcTdUXB16eBQnERwEFxdRdybFBz6lBBCbEpeDxwIN+fe/7sh8FiAdjHAdcMehNm+0MdZw+6H2dKmP0lOKUxwH8kTyHAcydnfGpGUzgu4wFEswAo+sRkLcIKHGbOVgB7e0CnUn5CE507I9OoAdjDCC/YL77bxgeVc7SBkR6G3EtDGGI9olZzoBpcl9VboGWP9vw22MDRdvZurr+IbG4V8N2SHobdyg7wSPJtuBae4K2TaIZMoV62/6BWHM2ZrA/bwjqVYgFuc1xxeC3CFtZiAebUYQKb56/LXGc1f9kXH1Q+R8ohlRgf9kgAAAABJRU5ErkJggg=="
+        rel="icon" type="image/x-icon" />
     {% block title %}
     {% endblock %}
 

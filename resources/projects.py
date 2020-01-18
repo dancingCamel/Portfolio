@@ -70,7 +70,11 @@ class Projects(Resource):
 
     @authenticate
     def delete(self):
-        data = _projects_parser.parse_args()
+        parser = reqparse.RequestParser()
+        parser.add_argument("title", type=str, required=True,
+                            help="Title is required")
+
+        data = parser.parse_args()
         project = ProjectsModel.find_by_title(data['title'])
 
         if project:
