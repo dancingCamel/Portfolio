@@ -15,9 +15,10 @@ function makeCard(uniqueId, project) {
 	return (
 		`<div class="col mb-4">
 		<div class="card h-100">
+		<div class="card-img-container">
 			<img src="` +
 		project['thumb'] +
-		`" class="card-img-top">
+		`" class="card-img-top"></div>
 			<div class="card-body">
 				<h5 class="card-title">` +
 		project['title'] +

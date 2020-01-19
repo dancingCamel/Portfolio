@@ -10,9 +10,11 @@ def authenticate(view_function):
         username = request.headers.get('username')
         password = request.headers.get('password')
 
+        # for use in development
         # admin_user = current_app.config['USERNAME']
         # admin_pass = current_app.config['PASSWORD']
 
+        # for use in production
         admin_user = os.getenv('USERNAME')
         admin_pass = os.getenv('PASSWORD')
 

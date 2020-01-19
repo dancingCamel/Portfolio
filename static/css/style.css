@@ -134,3 +134,11 @@ body {
 	display: flex;
 	justify-content: space-evenly;
 }
+
+.card-subtitle {
+	min-height: 40px;
+}
+
+.card-text {
+	min-height: 120px;
+}
