@@ -102,7 +102,7 @@ function makeModal(uniqueId, project) {
 									<!-- img -->
 									<img src="` +
 		project['image'] +
-		`" class="mb-2">
+		`" class="mb-2 modal-image">
 								</div>
 								<div class="row">
 									<!-- tags -->

@@ -40,6 +40,10 @@
 	/* word-wrap: break-word; */
 }
 
+.modal-image {
+	max-width: 100%;
+}
+
 .modal-body .modal-link-icon {
 	border-radius: 5px;
 	background-color: #4889fa;
