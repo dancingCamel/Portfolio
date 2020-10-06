@@ -30,7 +30,7 @@ class Projects(Resource):
         projects = [project.json() for project in ProjectsModel.find_all()]
         sorted_projects = sorted(projects, key=lambda item: item['id'])
         sorted_projects.reverse()
-        return {'projects': projects}, 200
+        return {'projects': sorted_projects}, 200
 
     @authenticate
     def put(self):
