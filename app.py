@@ -4,9 +4,11 @@ from flask_restful import Api
 from db import db
 from resources.index import Index
 from resources.projects import Projects
+from flask_talisman import Talisman
 
 
 app = Flask(__name__)
+Talisman(app)
 api = Api(app)
 
 # Configurations
