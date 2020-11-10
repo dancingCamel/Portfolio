@@ -28,7 +28,7 @@
         href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50" class="scrollspy">
 
     <!-- NAV -->
 
@@ -44,13 +44,19 @@
             <div class="collapse navbar-collapse flex-grow-1 mx-auto" id="nav-links">
                 <ul class="navbar-nav mr-auto flex-nowrap">
                     <li class="nav-item m-1">
-                        <a href="/" class="nav-link active uppercase">Projects</a>
+                        <a href="#about" class="nav-link uppercase">About</a>
+                    </li>
+                    <li class="nav-item m-1">
+                        <a href="#skills" class="nav-link uppercase">Skills</a>
+                    </li>
+                    <li class="nav-item m-1">
+                        <a href="#projects" class="nav-link uppercase">Projects</a>
                     </li>
                     <li class="nav-item m-1">
                         <a href="../static/pdf/Robert-Morgan-CV.pdf" class="nav-link uppercase">CV</a>
                     </li>
                     <li class="nav-item m-1">
-                        <a href="mailto:robert.brindley.morgan@gmail.com" class="nav-link uppercase">Contact</a>
+                        <a href="mailto:rbmorgan318@gmail.com" class="nav-link uppercase">Contact</a>
                     </li>
 
                 </ul>
@@ -65,7 +71,7 @@
     <!-- FOOTER -->
 
     <!-- Copyright -->
-    <footer class="footer-copyright dark-gray text-light text-center py-3">© 2019 Copyright:
+    <footer class="footer-copyright dark-gray text-light text-center py-3">© 2020 Copyright:
         <a href="/" class="text-light"> robbmdev.com</a>
     </footer>
 
@@ -79,6 +85,7 @@
     <script src="../static/scripts/bootstrap.min.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
         integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="/static/scripts/jquery.smoothScroll.min.js"></script>
 
 
     <!-- app script -->

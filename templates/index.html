@@ -7,6 +7,8 @@
 {% block main %}
 <main>
 
+    <!-- use bootstrap scroll spy and find a smooth scrolling plugin -->
+
     <div class="container-fluid">
         <div class="row" id="hero">
             <div class="content-wrapper">
@@ -30,15 +32,93 @@
     </div>
     <div class="container mt-2">
         <div class="row">
-            <div class="col-sm-12">
-                <!-- a bit about me -->
-
+            <div class="title-wrapper mx-auto mt-3 mb-3">
+                <h1 class="dark-gray-text" id="about"><em>About Me</em></h1>
             </div>
         </div>
-
+        <div class="row">
+            <div class="col-12">
+                <p>I am an experienced software engineer who is used to working in a highly competitive and fast-paced
+                    services
+                    business. I'm skilled in HTML, CSS, Javascript (certificated by Microsoft 70-480 exam) and Python
+                    - among others. I am a passionate programmer and a problem solver, with a Master's degree in
+                    Chemistry from Edinburgh University.</p>
+            </div>
+        </div>
         <div class="row">
             <div class="title-wrapper mx-auto mt-3 mb-3">
-                <h1 class="dark-gray-text"><em>Projects</em></h1>
+                <h1 class="dark-gray-text" id="skills"><em>Skills</em></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-6 text-center">
+                <div>
+                    <img src="/static/images/icons/js.png" class="skills-icon" alt="">
+                    <p class="mb-2">
+                        JavaScript
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 text-center">
+                <div>
+                    <img src="/static/images/icons/css.png" class="skills-icon" alt="">
+                    <p class="mb-2">
+                        CSS
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 text-center">
+                <div>
+                    <img src="/static/images/icons/bootstrap.png" class="skills-icon" alt="">
+                    <p class="mb-2">
+                        Bootstrap
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 text-center">
+                <div>
+                    <img src="/static/images/icons/php.png" class="skills-icon" alt="">
+                    <p class="mb-2">
+                        PHP
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 text-center">
+                <div>
+                    <img src="/static/images/icons/python.png" class="skills-icon" alt="">
+                    <p class="mb-2">
+                        Python
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 text-center">
+                <div>
+                    <img src="/static/images/icons/git.png" class="skills-icon" alt="">
+                    <p class="mb-2">
+                        Git
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 text-center">
+                <div>
+                    <img src="/static/images/icons/nodejs.png" class="skills-icon" alt="">
+                    <p class="mb-2">
+                        NodeJS
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 text-center">
+                <div>
+                    <img src="/static/images/icons/react.png" class="skills-icon" alt="">
+                    <p class="mb-2">
+                        React
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="title-wrapper mx-auto mt-3 mb-3">
+                <h1 class="dark-gray-text" id="projects"><em>Projects</em></h1>
             </div>
         </div>
 
@@ -61,6 +141,12 @@
 
 {% block script %}
 <script>
+
+    $(function () {
+
+        $('.scrollspy').smoothScroll();
+
+    });
 
     fetch('/projects').then(function (response) {
         return response.json();
