@@ -4,13 +4,10 @@ from flask_restful import Api
 from db import db
 from resources.index import Index
 from resources.projects import Projects
-from flask_talisman import Talisman
 
 
 app = Flask(__name__)
-
 api = Api(app)
-Talisman(api)
 
 # Configurations
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
