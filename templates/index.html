@@ -17,12 +17,12 @@
                 <div class="col-sm-4 mx-auto mb-3 social-icon-container">
                     <!-- social media icons (github, linkedin) -->
                     <span>
-                        <a href="https://github.com/dancingCamel/">
+                        <a href="https://github.com/dancingCamel/" target="_blank">
                             <div class="social-icon"><img src="../static/images/github.svg" width="40px"></div>
                         </a>
                     </span>
                     <span>
-                        <a href="https://www.linkedin.com/in/robert-morgan-5b5a6856/">
+                        <a href="https://www.linkedin.com/in/robert-morgan-5b5a6856/" target="_blank">
                             <div class="social-icon"><img src="../static/images/linkedin.svg" width="40px"></div>
                         </a>
                     </span>
@@ -130,6 +130,59 @@
             <!-- Modals added dynamically -->
         </div>
 
+        <div class="row">
+            <div class="title-wrapper mx-auto mt-3 mb-3">
+                <h1 class="dark-gray-text" id="contact"><em>Contact</em></h1>
+            </div>
+        </div>
+
+        <form id="contact-form" method="POST" action="https://formspree.io/f/moqplvzl" role="form">
+            <div class="messages"></div>
+            <div class="controls">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_name">Name *</label>
+                            <input id="form_name" type="text" name="name" class="form-control"
+                                placeholder="Please enter your name" required="required"
+                                data-error="Firstname is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_email">Email *</label>
+                            <input id="form_email" type="email" name="_replyto" class="form-control"
+                                placeholder="Please enter your email" required="required"
+                                data-error="Valid email is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="form_message">Message *</label>
+                            <textarea id="form_message" name="message" class="form-control" placeholder="Message for me"
+                                rows="4" required="required" data-error="Please write a message."></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-1">
+                        <input type="submit" class="btn btn-success btn-send" value="Send message">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-muted">
+                            <strong>*</strong> These fields are required.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
     </div>
 
 
@@ -143,10 +196,16 @@
 <script>
 
     $(function () {
-
-        $('.scrollspy').smoothScroll();
-
+        $('.scrollspy').smoothScroll({
+            duration: 1000
+        });
     });
+
+    // collapsing the navbar doesn't work with scrollspy - it changes the offset so scrolls to wrong place
+    // $(".navbar-nav>li>a").on("click", function () {
+    //     $(".navbar-collapse").collapse("hide");
+    // });
+
 
     fetch('/projects').then(function (response) {
         return response.json();
