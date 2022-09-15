@@ -10,6 +10,6 @@ pycodestyle==2.5.0
 pytz==2019.3
 six==1.14.0
 SQLAlchemy==1.4.41
-Werkzeug==0.16.0
+Werkzeug==2.2.2
 uwsgi
 psycopg2
